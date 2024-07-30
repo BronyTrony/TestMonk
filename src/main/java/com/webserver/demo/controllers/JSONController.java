@@ -26,14 +26,8 @@ public class JSONController {
     @PostMapping("/post")
     public ResponseEntity<?> Testing(@RequestBody Map<String,String> request){
         try{
-            if(request.size()>2){
-                throw new Exception("ERROR: Лишние поля в JSON");
-            } else if (!request.containsKey("login")) {
-                throw new Exception("ERROR: Нет поля login");
-            } else if (!request.containsKey("password")) {
-                throw new Exception("ERROR: Нет поля password");
-            } else if (request.containsValue("")) {
-                throw new Exception("ERROR: Отсутствует валидного login или(и) password");
+            if(request.size()>2 || !request.containsKey("login") || !request.containsKey("password") || request.containsValue("")){
+                throw new Exception("Bad JSON!");
             }
             User user = new User(request.get("login"),request.get("password"));
             return ResponseEntity.ok(user.toString());
