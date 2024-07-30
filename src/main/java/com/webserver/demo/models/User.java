@@ -2,24 +2,32 @@ package com.webserver.demo.models;
 
 import lombok.Getter;
 import lombok.Setter;
-import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
-import java.util.Date;
+import java.sql.Date;
 
 @Setter
 @Getter
 public class User {
     @NotBlank
-    private String login;
+    public String login;
     @NotBlank
-    private String password;
-    private final Date date= new Date();
+    public String password;
+    private long now = System.currentTimeMillis();
+    public java.sql.Date date= new Date(now);
+    public String email;
 
     public User(String login, String password) {
         this.login = login;
         this.password = password;
+        this.email = login.toLowerCase() + "@email.com";
+    }
+
+    public User(String login, String password, Date date, String email) {
+        this.login = login;
+        this.password = password;
+        this.date = date;
+        this.email = email;
     }
 
     @Override
@@ -28,6 +36,7 @@ public class User {
                 "\"login\":\"" + login + '\"' +
                 "\"password\":\"" + password + '\"' +
                 "\"date\":\"" + date + '\"' +
+                "\"email\":\"" + email + '\"' +
                 '}';
     }
 }
