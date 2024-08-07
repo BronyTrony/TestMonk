@@ -1,0 +1,4 @@
+{"login":"Kolly","password":"mg(87d","date":"2022-08-23","email":"kolly@email.com"}
+{"login":"Kolya","password":"jdyrb*6","date":"2024-07-30","email":"kolya@email.com"}
+{"login":"Kate","password":"grt435","date":"2023-12-01","email":"kate@email.com"}
+{"login":"Kate","password":"grt435","date":"2023-12-01","email":"kate@email.com"}

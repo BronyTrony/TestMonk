@@ -1,0 +1,5 @@
+{"login":"Egor", "password":"895td;","date":"05.09.23","email":"egor@email.com"}
+{"login":"Kirill", "password":"mks'p4","date":"25.11.22","email":"kirill@email.com"}
+{"login":"Oleg", "password":"*hfnkE","date":"13.05.23","email":"oleg@email.com"}
+{"login":"Tolik", "password":"klf8d)","date":"16.03.22","email":"tolik@email.com"}
+{"login":"Jorik", "password":"O:N;Ff5","date":"04.02.24","email":"jorik@email.com"}

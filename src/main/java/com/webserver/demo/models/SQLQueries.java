@@ -1,5 +1,6 @@
 package com.webserver.demo.models;
 
+import java.io.IOException;
 import java.sql.*;
 
 public class SQLQueries {
@@ -7,7 +8,7 @@ public class SQLQueries {
     static String dbusr = "postgres";
     static String dbpass = "postgrespassword";
 
-    public static User Select(String login) {
+    public static User Select(String login){
 
         Connection conn = null;
 
@@ -21,13 +22,11 @@ public class SQLQueries {
 
             ResultSet rs;
             rs = stat.executeQuery(query);
-            if (rs.next()){
-                if (rs.getString(1) != null){
+            if(rs.next()){
+            if (rs.getString(1) == null) {throw new Exception();}
                     return new User(rs.getString(1), rs.getString(2), rs.getDate(3), rs.getString(4));
-                }else{
-                    return new User(null, null);
-                }
-            }
+
+        }
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
